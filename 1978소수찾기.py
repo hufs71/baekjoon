@@ -1,7 +1,7 @@
 n = int(input())
 lista = list(map(int, input().split()))
 
-def so(n):   #소수확인
+def so(n):   #약수확인
     ans=0
     if n==1:
         return 1
