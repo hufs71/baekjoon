@@ -1,6 +1,5 @@
-n = int(input())
-lista = list(map(int, input().split()))
-
+m=int(input())
+n=int(input())
 def so(n):   #약수확인
     ans=0
     if n==1:
@@ -10,9 +9,17 @@ def so(n):   #약수확인
             for j in range(n):
                 if i*j==n:
                     ans+=1
-        return ans
-count=0
-for i in range(n):
-    if so(lista[i])==0:
-        count+=1
-print(count)
+        return ans       #약수개수
+sum=0
+s=[]
+
+for i in range(m,n+1):
+    if so(i)==0:
+        sum+=i
+        s.append(i)
+
+if len(s)==0:
+    print(-1)
+else:
+    print(sum)
+    print(s[0])
