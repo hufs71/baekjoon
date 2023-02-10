@@ -1,11 +1,18 @@
-x, y, w, h = map(int,input().split())
-#print('%d %d %d %d'%(x, y, w, h))
+n = int(input())
+lista = list(map(int, input().split()))
 
-if (x>=w)&(y>=h):          #꼭지점 바깥
-    print(math.sqrt((x-w)**2+(y-h)**2))
-   # print(1)
-else:
-    h1, w1 = abs(y-h), abs(x-w)       #w, h이랑 비교
-    ans=[x, y, h1, w1]                #x, y축에 더 가까울 경우 in
-    ans.sort()
-    print(ans[0])
+def so(n):
+    ans=0
+    if n==1:
+        return 1
+    else:
+        for i in range(n):
+            for j in range(n):
+                if i*j==n:
+                    ans+=1
+        return ans
+count=0
+for i in range(n):
+    if so(lista[i])==0:
+        count+=1
+print(count)
